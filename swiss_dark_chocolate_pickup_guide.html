@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiss Dark Chocolate Shopping Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cocoa: {
+                            50: '#fbf8f5',
+                            100: '#f5efe8',
+                            200: '#e8dcce',
+                            600: '#8c593b',
+                            800: '#4a2c1d',
+                            900: '#2b170e',
+                        },
+                        gold: {
+                            400: '#f3c669',
+                            500: '#d4af37',
+                            600: '#aa820a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf8f5;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #f3c669 0%, #d4af37 50%, #aa820a 100%);
+        }
+        .cocoa-gradient {
+            background: linear-gradient(135deg, #4a2c1d 0%, #2b170e 100%);
+        }
+    </style>
+</head>
+<body class="text-cocoa-900 pb-16 min-h-screen">
+
+    <!-- Header -->
+    <header class="cocoa-gradient text-white sticky top-0 z-30 shadow-lg border-b border-gold-500/30">
+        <div class="max-w-3xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+                <span class="inline-block bg-gold-500/20 text-gold-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-gold-500/40 mb-1">
+                    <i class="fa-solid fa-cart-shopping mr-1">="</i> Official Order List
+                </span>
+                <h1 class="text-2xl font-bold tracking-tight">Shopping List</h1>
+                <p class="text-xs text-cocoa-200">Swiss Dark Chocolate Pickup • Bern & Zurich Airport (ZRH)</p>
+            </div>
+            <button onclick="window.print()" class="no-print bg-gold-500 hover:bg-gold-600 text-cocoa-900 font-semibold text-xs px-3.5 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-md">
+                <i class="fa-solid fa-print"></i> Print / Save PDF
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-3xl mx-auto px-4 py-6 space-y-8">
+
+        <!-- Quick Summary / Stats -->
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-cocoa-100 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-cocoa-100 text-cocoa-800 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                </div>
+                <div>
+                    <h2 class="text-sm font-bold text-cocoa-900">Dark Chocolate Selection</h2>
+                    <p class="text-xs text-slate-500">3 Target Items • 2 Backup Options</p>
+                </div>
+            </div>
+            <span id="completionBadge" class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">
+                0 / 3 Collected
+            </span>
+        </div>
+
+        <!-- SECTION 1: BERN LOCATIONS & PRODUCTS -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 text-cocoa-800 border-b border-cocoa-200 pb-2">
+                <span class="bg-cocoa-800 text-gold-400 text-xs font-bold px-2.5 py-1 rounded-md">1</span>
+                <h2 class="text-lg font-bold tracking-tight">Bern Pickup Stores & Primary Products</h2>
+            </div>
+
+            <!-- Store 1: Sprüngli Bern -->
+            <div class="bg-white rounded-2xl shadow-sm border border-cocoa-100 overflow-hidden">
+                <!-- Store Header -->
+                <div class="bg-cocoa-50 p-4 border-b border-cocoa-100 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                    <div>
+                        <span class="text-xs font-bold text-cocoa-600 tracking-wider uppercase">Store 1</span>
+                        <h3 class="text-base font-bold text-cocoa-900">Confiserie Sprüngli – Bern Bahnhof</h3>
+                        <p class="text-xs text-slate-600 mt-0.5"><i class="fa-solid fa-location-dot text-red-600 mr-1"></i> Bahnhofplatz 10A, 3011 Bern (Lower Ground Level)</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=Confiserie+Sprungli+Bahnhofplatz+10A+Bern" target="_blank" class="inline-flex items-center gap-1.5 text-xs bg-white text-cocoa-800 border border-cocoa-200 px-3 py-1.5 rounded-lg hover:bg-cocoa-100 font-medium transition-colors w-fit">
+                        <i class="fa-solid fa-map-location-dot text-gold-600"></i> Open Maps
+                    </a>
+                </div>
+
+                <!-- Products in Store 1 -->
+                <div class="p-4 space-y-4 divide-y divide-slate-100">
+
+                    <!-- Product 1 -->
+                    <div class="pt-3 first:pt-0 flex flex-col sm:flex-row items-start gap-4">
+                        <div class="relative group cursor-pointer shrink-0" onclick="openLightbox('https://cdn.shopify.com/s/files/1/0938/8149/9979/files/13574_p2_2048x2048_2026_6d779757-3f57-4a0b-bf00-7c80e5d13d67.webp?v=1776082022', 'Sprüngli Grand Cru Dark Assortment (16 pcs)')">
+                            <img src="https://cdn.shopify.com/s/files/1/0938/8149/9979/files/13574_p2_2048x2048_2026_6d779757-3f57-4a0b-bf00-7c80e5d13d67.webp?v=1776082022" alt="Grand Cru Dark Box" class="w-24 h-24 object-cover rounded-xl border border-slate-200 bg-slate-50">
+                            <div class="absolute inset-0 bg-black/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Zoom
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" onchange="toggleItem(this)" class="item-checkbox w-4 h-4 text-cocoa-800 rounded border-slate-300 focus:ring-gold-500">
+                                    <span class="font-bold text-sm text-cocoa-900">Sprüngli Grand Cru Dark Assortment</span>
+                                </label>
+                                <span class="text-sm font-extrabold text-cocoa-800 whitespace-nowrap">~CHF 39.90</span>
+                            </div>
+                            <p class="text-xs text-slate-600">Box of 16 single-origin dark chocolate truffles & pralines (Madagascar, Ecuador, Maracaibo 65-72%).</p>
+                            <div class="inline-block bg-amber-50 text-amber-800 text-[11px] px-2 py-0.5 rounded border border-amber-200 font-medium">
+                                <i class="fa-solid fa-leaf mr-1"></i> Single Origin Dark Cocoa
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-start gap-4">
+                        <div class="relative group cursor-pointer shrink-0" onclick="openLightbox('https://www.datocms-assets.com/150830/1779800295-spruengli-jubilaum-190-jahre-metal-boite-edited.jpeg?auto=format&crop=focalpoint&dpr=2&fit=crop&fp-x=0.5&fp-y=0.91&h=217&w=289', 'Building Motif Tin / Nostalgic Heritage Tin (24 pcs)')">
+                            <img src="https://www.datocms-assets.com/150830/1779800295-spruengli-jubilaum-190-jahre-metal-boite-edited.jpeg?auto=format&crop=focalpoint&dpr=2&fit=crop&fp-x=0.5&fp-y=0.91&h=217&w=289" alt="Heritage Tin" class="w-24 h-24 object-cover rounded-xl border border-slate-200 bg-slate-50">
+                            <div class="absolute inset-0 bg-black/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Zoom
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" onchange="toggleItem(this)" class="item-checkbox w-4 h-4 text-cocoa-800 rounded border-slate-300 focus:ring-gold-500">
+                                    <span class="font-bold text-sm text-cocoa-900">Building Motif Tin (Heritage Box - 24 pcs)</span>
+                                </label>
+                                <span class="text-sm font-extrabold text-cocoa-800 whitespace-nowrap">~CHF 48.00 - 52.00</span>
+                            </div>
+                            <p class="text-xs text-slate-600">Collectible souvenir tin featuring Sprüngli's heritage motif.</p>
+                            <div class="bg-red-50 text-red-800 text-[11px] p-2 rounded-lg border border-red-200 font-medium flex items-start gap-1.5 mt-1">
+                                <i class="fa-solid fa-circle-exclamation text-red-600 mt-0.5 shrink-0"></i>
+                                <span><strong>Counter Instruction:</strong> Request the staff to fill this tin <em>strictly with dark chocolate pralines and truffles only</em>.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Store 2: Choba Choba Bern -->
+            <div class="bg-white rounded-2xl shadow-sm border border-cocoa-100 overflow-hidden">
+                <!-- Store Header -->
+                <div class="bg-cocoa-50 p-4 border-b border-cocoa-100 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                    <div>
+                        <span class="text-xs font-bold text-cocoa-600 tracking-wider uppercase">Store 2</span>
+                        <h3 class="text-base font-bold text-cocoa-900">Choba Choba (Bern HQ or Loeb)</h3>
+                        <p class="text-xs text-slate-600 mt-0.5"><i class="fa-solid fa-location-dot text-red-600 mr-1"></i> HQ: Wylerringstrasse 36, Bern <u>OR</u> Loeb Dept Store (Spitalgasse 47-51)</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="https://maps.google.com/?q=Choba+Choba+Wylerringstrasse+36+Bern" target="_blank" class="inline-flex items-center gap-1 text-[11px] bg-white text-cocoa-800 border border-cocoa-200 px-2.5 py-1 rounded-lg hover:bg-cocoa-100 font-medium">
+                            <i class="fa-solid fa-map-pin text-gold-600"></i> HQ
+                        </a>
+                        <a href="https://maps.google.com/?q=Loeb+Spitalgasse+47+Bern" target="_blank" class="inline-flex items-center gap-1 text-[11px] bg-white text-cocoa-800 border border-cocoa-200 px-2.5 py-1 rounded-lg hover:bg-cocoa-100 font-medium">
+                            <i class="fa-solid fa-store text-gold-600"></i> Loeb
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Products in Store 2 -->
+                <div class="p-4">
+                    <div class="flex flex-col sm:flex-row items-start gap-4">
+                        <div class="relative group cursor-pointer shrink-0" onclick="openLightbox('https://www.chobachoba.com/cdn/shop/files/1800x2700_Tasting_Bio_5000x.png?v=1749224519', 'Huayabamba Tasting Box Bio 24 pieces')">
+                            <img src="https://www.chobachoba.com/cdn/shop/files/1800x2700_Tasting_Bio_5000x.png?v=1749224519" alt="Choba Choba Tasting Box" class="w-24 h-24 object-cover rounded-xl border border-slate-200 bg-slate-50">
+                            <div class="absolute inset-0 bg-black/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Zoom
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" onchange="toggleItem(this)" class="item-checkbox w-4 h-4 text-cocoa-800 rounded border-slate-300 focus:ring-gold-500">
+                                    <span class="font-bold text-sm text-cocoa-900">Huayabamba Tasting Box Bio</span>
+                                </label>
+                                <span class="text-sm font-extrabold text-cocoa-800 whitespace-nowrap">~CHF 36.90</span>
+                            </div>
+                            <p class="text-xs text-slate-600">Farmer-owned Peruvian craft chocolate. The Huayabamba Tasting Box Bio contains a total of 24 small chocolate bars of 10g each. 6 different chocolate creations in mini format (4 bars of each variety), Includes Nativo 80%, Pure Dark 71% with Sea Salt & single origin bars.</p>
+                            <div class="inline-block bg-emerald-50 text-emerald-800 text-[11px] px-2 py-0.5 rounded border border-emerald-200 font-medium">
+                                <i class="fa-solid fa-seedling mr-1"></i> 100% Organic & Bean-to-Bar
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ZURICH AIRPORT (ZRH) ALTERNATIVES -->
+        <section class="space-y-4 pt-4">
+            <div class="flex items-center gap-2 text-cocoa-800 border-b border-cocoa-200 pb-2">
+                <span class="bg-gold-500 text-cocoa-900 text-xs font-bold px-2.5 py-1 rounded-md">2</span>
+                <h2 class="text-lg font-bold tracking-tight">Zurich Airport (ZRH) Pickup Alternatives</h2>
+            </div>
+
+            <div class="bg-amber-50/60 border border-amber-200 rounded-xl p-3 text-xs text-amber-900 flex items-center gap-2">
+                <i class="fa-solid fa-plane-arrival text-amber-700 text-base shrink-0"></i>
+                <span>Use these locations at Zurich Airport if any products are missed or out of stock in Bern.</span>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+
+                <!-- ZRH Location 1 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-cocoa-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-bold bg-cocoa-100 text-cocoa-800 px-2 py-0.5 rounded">ZRH Airport Boutique</span>
+                            <i class="fa-solid fa-store text-cocoa-600"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-cocoa-900">Confiserie Sprüngli @ ZRH</h3>
+                        <p class="text-xs text-slate-600 mt-1">Airside Center (Level 1) & Airport Center (Landside)</p>
+                        <p class="text-xs text-slate-500 mt-2"><strong>Stock status:</strong> Both the <em>Grand Cru Dark Assortment</em> and <em>Building Motif Tin</em> are readily available off-the-shelf here.</p>
+                    </div>
+                </div>
+
+                <!-- ZRH Location 2: Läderach -->
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-cocoa-100 flex flex-col justify-between space-y-3">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-bold bg-gold-400/20 text-cocoa-800 px-2 py-0.5 rounded border border-gold-400/40">Fresh Slab Alternative</span>
+                            <i class="fa-solid fa-award text-gold-600"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-cocoa-900">Läderach Chocolatier @ ZRH</h3>
+                        <p class="text-xs text-slate-600">Airport Center Landside Level 0 & Airside</p>
+                    </div>
+
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+                        <img src="https://laderach.com/media/catalog/product/cache/580ce9e034439d240d609eb08dc353f4/1/0/10004710_haselnuss_dunkel_02_1_4_1.jpg" alt="Laderach FrischSchoggi Dark" class="w-14 h-14 object-cover rounded-lg border border-slate-200 cursor-pointer" onclick="openLightbox('https://laderach.com/media/catalog/product/cache/580ce9e034439d240d609eb08dc353f4/1/0/10004710_haselnuss_dunkel_02_1_4_1.jpg', 'Läderach FrischSchoggi Hazelnut Dark Slab')">
+                        <div>
+                            <h4 class="font-bold text-xs text-cocoa-900">FrischSchoggi Hazelnut Dark</h4>
+                            <p class="text-[11px] text-slate-500">Dark chocolate slab with whole roasted Piedmont hazelnuts.</p>
+                            <span class="text-xs font-bold text-cocoa-800">~CHF 25.00 - 40.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeLightbox()">
+        <div class="relative max-w-lg w-full bg-white rounded-2xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute top-3 right-3 bg-black/60 hover:bg-black text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="p-2 bg-slate-900">
+                <img id="lightboxImg" src="" alt="Enlarged view" class="w-full h-auto max-h-[70vh] object-contain rounded-lg">
+            </div>
+            <div class="p-4 bg-white text-center">
+                <h4 id="lightboxCaption" class="font-bold text-cocoa-900 text-sm"></h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        function toggleItem(checkbox) {
+            const container = checkbox.closest('div');
+            if (checkbox.checked) {
+                container.classList.add('opacity-50', 'line-through');
+            } else {
+                container.classList.remove('opacity-50', 'line-through');
+            }
+            updateCounter();
+        }
+
+        function updateCounter() {
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            const checked = document.querySelectorAll('.item-checkbox:checked');
+            const badge = document.getElementById('completionBadge');
+            
+            badge.textContent = `${checked.length} / ${checkboxes.length} Collected`;
+            
+            if (checked.length === checkboxes.length) {
+                badge.className = "bg-emerald-100 text-emerald-800 text-xs font-semibold px-2.5 py-1 rounded-full";
+            } else if (checked.length > 0) {
+                badge.className = "bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full";
+            } else {
+                badge.className = "bg-slate-100 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-full";
+            }
+        }
+
+        function openLightbox(src, caption) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxCaption').textContent = caption;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
